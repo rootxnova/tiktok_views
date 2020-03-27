@@ -1,0 +1,42 @@
+print('''
+
+  ____   __  __  _   _   _____   ___   _  __  _____    ___    _  __
+ |  _ \  \ \/ / | \ | | |_   _| |_ _| | |/ / |_   _|  / _ \  | |/ /
+ | |_) |  \  /  |  \| |   | |    | |  | ' /    | |   | | | | | ' / 
+ |  _ <   /  \  | |\  |   | |    | |  | . \    | |   | |_| | | . \ 
+ |_| \_\ /_/\_\ |_| \_|   |_|   |___| |_|\_\   |_|    \___/  |_|\_\
+                                                                   
+
+====================================================
+==• SCRIPT   : TIKTOK AUTO VIEWS                 •==
+==• CODED BY : ABDULRAHMAN ABOULDAHAB            •==
+==• FACEBOOK : WelcomeAbdulrahman.Official       •==
+==• TWITTER  : 3OOOBAAD                          •==
+==• ASKFM    : xXxROOTxXx                        •==
+==• GITHUB   : rootxnova                         •==
+====================================================
+
+''')
+from selenium import webdriver
+from time import sleep
+
+link = input(' ♦ Enter Link Here : ')
+
+a=0
+while a < 3000000:
+    a+1
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(5)
+    driver.minimize_window()
+    driver.get('https://tiktools.net/service/views')
+    accp = driver.find_element_by_xpath('//*[@id="closeAnnouncementsModal"]').click()
+    targ = driver.find_element_by_xpath('//*[@id="feed_form"]/div/input')
+    targ.send_keys(link)
+    conf = driver.find_element_by_xpath('//*[@id="feed_area"]/div[3]/button').click()
+    sleep(3)
+    amou = driver.find_element_by_xpath('//*[@id="process_form"]/div[2]/input')
+    amou.send_keys('1000')
+    sleep(1)
+    gooo = driver.find_element_by_xpath('//*[@id="submit"]').click()
+    sleep(70)
+    driver.quit()
